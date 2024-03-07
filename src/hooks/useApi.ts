@@ -8,9 +8,6 @@ const api = axios.create({
 
 export const useApi = () => ({
     validateToken: async (token: string) => {
-        return {
-            user: { id: 3, name: 'José', email: 'jose@gmail.com' }
-        };
         const response = await api.post('/validate', { token });
         return response.data;
     },
